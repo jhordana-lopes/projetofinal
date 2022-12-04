@@ -4,6 +4,7 @@ package br.edu.ifgoiano.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import br.edu.ifgoiano.entidade.Aluno;
@@ -52,6 +53,19 @@ public class AlunoController {
 	@GetMapping("/gabarito")
 	public String gabaritoAluno(Model model) {
 		return "gabarito";
+	}
+	@GetMapping("/aluno/alterar/{id}")
+    public String abrirAlterarAluno(@PathVariable Long id, Model model) {
+    	Aluno aluno =this.alunoServiceImpl.obterAluno(id);
+    	
+    	model.addAttribute("aluno", aluno);
+    	
+    	return"alterar";
+	}
+	@PostMapping("/aluno/alterar")
+	public String alterarAluno(Aluno aluno) {
+		this.alunoServiceImpl.alterarAluno(aluno);
+		return "redirect:/index";
 	}
 
 }

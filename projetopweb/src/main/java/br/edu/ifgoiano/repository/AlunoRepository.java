@@ -6,4 +6,6 @@ import br.edu.ifgoiano.entidade.Aluno;
 
 public interface AlunoRepository extends JpaRepository<Aluno, String > {
 
+	Aluno getReferenceById(Long id);
+
 }

@@ -8,12 +8,10 @@ public interface AlunoService {
 
 	public List<Aluno> listarAluno();
 
-	void inserir(Aluno aluno);
+	public void inserir(Aluno aluno);
 
-	public Object listarLivros();
+	public Aluno obterAluno(Long id);
 
-	void alterarAluno(Aluno aluno);
-
-	public Object obterAluno();
+	public void alterarAluno(Aluno aluno);
 
 }

@@ -17,38 +17,26 @@ public class AlunoServiceImpl implements AlunoService {
 	@Autowired
 	private AlunoRepository alunorepostitory;
 
-	@Override
-	public Object listarLivros() {
-		// TODO Auto-generated method stub
-		return alunorepostitory.findAll();
-	}
 
 	@Override
 	public List<Aluno> listarAluno() {
-		// TODO Auto-generated method stub
 		return alunorepostitory.findAll();
 	}
 
 	@Override
 	public void inserir(Aluno aluno) {
 		this.alunorepostitory.save(aluno);
-
-	}
-
-	public Aluno obterAluno(String id) {
-
-		return this.alunorepostitory.getReferenceById(id);
-	}
-
-	
-	public void alterarAluno(Aluno aluno) {
-		this.alunorepostitory.save(aluno);
 	}
 
 	@Override
-	public Object obterAluno() {
-		// TODO Auto-generated method stub
-		return null;
+	public Aluno obterAluno(Long id) {
+		return this.alunorepostitory.getReferenceById(id);
+	}
+
+	@Override
+	public void alterarAluno(Aluno aluno) {
+		this.alunorepostitory.save(aluno);
+		
 	}
 
 }

@@ -30,15 +30,27 @@
 					<div class="col-12 col-lg-6 mr-lg-auto">
 						<div class="hero-content text-center text-lg-left">
 							<h1 class="hero-title">Seu Perfil</h1>
+							<table class="table">
+								<thead>
+									<tr>
+										<th scope="col">#</th>
+										<th scope="col">Nome</th>
+										<th scope="col">Senha</th>
 
-							<tr th:each="aluno : ${aluno}">
-								<td th:text="${aluno.id}"></td>
-								<td th:text="${aluno.nome}"></td>
-								<td th:text="${aluno.senha}"></td>
-								<td><a class="btn btn-success"th:href="@{/aluno/alterar{id}(id=${aluno.id})}"> Alterar</a> 
-									<a class="btn btn-danger">Excluir</a></td>
-								
-							</tr>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="aluno : ${aluno}">
+										<td th:text="${aluno.id}"></td>
+										<td th:text="${aluno.nome}"></td>
+										<td th:text="${aluno.senha}"></td>
+
+										<td><a class="btn btn-success"
+											th:href="@{/aluno/alterar/{id}(id=${aluno.id})}"> Alterar</a>
+											<a class="btn btn-danger">Excluir</a></td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>

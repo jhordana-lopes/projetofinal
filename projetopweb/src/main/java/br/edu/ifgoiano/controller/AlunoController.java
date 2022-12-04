@@ -62,10 +62,10 @@ public class AlunoController {
     	
     	return"alterar";
 	}
-	@PostMapping("/aluno/alterar")
+	@PostMapping("/livros/alterar")
 	public String alterarAluno(Aluno aluno) {
 		this.alunoServiceImpl.alterarAluno(aluno);
-		return "redirect:/index";
+		return "redirect:/painel";
 	}
 
 }

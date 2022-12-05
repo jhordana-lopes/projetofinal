@@ -8,4 +8,9 @@ public interface AlunoRepository extends JpaRepository<Aluno, String > {
 
 	Aluno getReferenceById(Long id);
 
+	void deleteById(Long id);
+
+
+
+
 }

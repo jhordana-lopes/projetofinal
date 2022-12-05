@@ -14,4 +14,6 @@ public interface AlunoService {
 
 	public void alterarAluno(Aluno aluno);
 
+	public void excluirAluno(Long id);
+
 }

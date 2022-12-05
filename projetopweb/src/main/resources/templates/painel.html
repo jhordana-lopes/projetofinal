@@ -45,9 +45,8 @@
 										<td th:text="${aluno.nome}"></td>
 										<td th:text="${aluno.senha}"></td>
 
-										<td><a class="btn btn-success"
-											th:href="@{/aluno/alterar/{id}(id=${aluno.id})}"> Alterar</a>
-											<a class="btn btn-danger">Excluir</a></td>
+										<td><a class="btn btn-success"th:href="@{/aluno/alterar/{id}(id=${aluno.id})}"> Alterar</a>
+											<a class="btn btn-danger"th:href="@{/aluno/excluir/{id}(id=${aluno.id})}">Excluir</a></td>
 									</tr>
 								</tbody>
 							</table>

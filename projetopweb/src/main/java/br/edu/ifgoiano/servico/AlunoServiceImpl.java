@@ -39,4 +39,13 @@ public class AlunoServiceImpl implements AlunoService {
 		
 	}
 
+	@Override
+	public void excluirAluno(Long id) {
+		this.alunorepostitory.deleteById(id);
+	
+	}
+
+
+
+
 }

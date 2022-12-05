@@ -54,18 +54,27 @@ public class AlunoController {
 	public String gabaritoAluno(Model model) {
 		return "gabarito";
 	}
+
 	@GetMapping("/aluno/alterar/{id}")
-    public String abrirAlterarAluno(@PathVariable Long id, Model model) {
-    	Aluno aluno =this.alunoServiceImpl.obterAluno(id);
-    	
-    	model.addAttribute("aluno", aluno);
-    	
-    	return"alterar";
+	public String abrirAlterarAluno(@PathVariable Long id, Model model) {
+		Aluno aluno = this.alunoServiceImpl.obterAluno(id);
+
+		model.addAttribute("aluno", aluno);
+
+		return "alterar";
 	}
-	@PostMapping("/livros/alterar")
+
+	@PostMapping("/aluno/alterar")
 	public String alterarAluno(Aluno aluno) {
 		this.alunoServiceImpl.alterarAluno(aluno);
 		return "redirect:/painel";
 	}
 
+	 @GetMapping ("/aluno/excluir/{id}")
+	    public String excluirLivro(@PathVariable Long id) {
+	    	this.alunoServiceImpl.excluirAluno(id);
+	    	
+	    	return "redirect:/index";
+
+	 }
 }
